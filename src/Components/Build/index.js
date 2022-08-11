@@ -4,7 +4,7 @@ const Build = () => {
   return (
     <div className=' max-w-full bg-[#1C1C1C]  mt-10 border-y-2 border-[gray] h-[60vh] 	' >
         <div className='flex items-center justify-center h-3/6 mt-10	'>
-        <div className='lg:text-3xl font-semibold text-[white]  inline-flex sm:flex flex-col ' >
+        <div className='lg:text-3xl font-semibold text-[white]  inline-flex sm:flex md:flex-row flex-col ' >
         
             <div className='text-[gray]' >
             <p>Build in a weekend,</p>
