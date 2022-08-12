@@ -11,6 +11,11 @@ import TwitterReview from "./Components/ReviewTwitter";
 import Community from "./Components/Community";
 import Products from "./Components/Products";
 import { FiDatabase } from "react-icons/fi";
+import Focus from "./Components/focus";
+import Weekend from "./Components/Weekend";
+import BasicVideo from "./Components/BasicVideo";
+import Header1 from "./Components/Header1";
+import Navbar from "./Components/Navbar";
 const App = () => {
   const data = [
     {
@@ -168,7 +173,20 @@ Absolutely amazing!`,
     },
   ]
   return (
+    <div>
+      <Header1/>
+      <Navbar/>
     <div className="bg-[#1C1C1C]">
+      <div className="grid grid-cols-2 p-20 gap-20" >
+        <div>
+          <Weekend/>
+        </div>
+        <div>
+          <BasicVideo/>
+        </div>
+
+      </div>
+    <Focus/>
       <div className="grid grid-cols-4 gap-10" >
         
          { productsdata.map((v, k) => (
@@ -214,6 +232,7 @@ Absolutely amazing!`,
       </div>
       <Build />
       <Footer />
+    </div>
     </div>
   );
 };
