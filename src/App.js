@@ -7,6 +7,10 @@ import Enterprise from "./Components/Enterprise";
 import TableEditor from "./Components/tableeditor";
 import Review from "./Components/Review";
 import Supabase from "./Components/supabase";
+import TwitterReview from "./Components/ReviewTwitter";
+import Community from "./Components/Community";
+import Products from "./Components/Products";
+import { FiDatabase } from "react-icons/fi";
 const App = () => {
   const data = [
     {
@@ -68,7 +72,6 @@ const App = () => {
       icondes: "codingki",
       subdes: "react-native-expo-template",
       btext: "View Code",
-
     },
     {
       id: "5",
@@ -89,9 +92,105 @@ const App = () => {
       btext: "Launch Demo",
     },
   ];
+  const TwitterData = [
+    {
+      id: 1,
+      tname: "@thatguy_tex",
+      tdes: `            "Working with @supabase has been one of the best dev experiences
+            I've had lately. Incredibly easy to set up, great documentation, and
+            so many fewer hoops to jump through than the competition. I
+            definitely plan to use it on any and all future projects."`,
+    },
+    {
+      id: 2,
+      tname: "@lxoyeDesign",
+      tdes: `            @supabase
+ is just 🤯
+Now I see why a lot of people love using it as a backend for their applications. I am really impressed with how easy it is to set up an Auth and then just code it together for the frontend.
+
+@IngoKpp
+ now I see your joy with Supabase
+
+#coding #fullstackwebdev`,
+    },
+    {
+      id: 3,
+      tname: "@varlenneto",
+      tdes: `          I've been using 
+@supabase
+ for two personal projects and it has been amazing being able to use the power of Postgres and don't have to worry about the backend`,
+    },
+    {
+      id: 4,
+      tname: "@justinjunodev",
+      tdes: `            Y'all 
+@supabase
+ + 
+@nextjs
+ is amazing! 🙌
+
+Barely an hour into a proof-of-concept and already have most of the functionality in place. 🤯🤯🤯`,
+    },
+    {
+      id: 5,
+      tname: "@BraydonCoyer",
+      tdes: `            And thanks to 
+@supabase
+, I was able to go from idea to launched feature in a matter of hours. 
+
+Absolutely amazing!`,
+    },
+  ];
+  const productsdata = [
+    {
+      id:1,
+      icon:  <FiDatabase size={20}/>,
+      icondes: 'Database',
+      des: `Every project is a full Postgres database, the world's most trusted relational database.`
+    },
+     {
+      id:2,
+      icon:  <FiDatabase size={20}/>,
+      icondes: 'Authentication',
+      des: `Add user sign ups and logins, securing your data with Row Level Security.`
+    },
+    {
+      id:3,
+      icon:  <FiDatabase size={20}/>,
+      icondes: 'Storage',
+      des: `Store, organize, and serve large files. Any media, including videos and images.`
+    },
+    {
+      id:4,
+      icon:  <FiDatabase size={20}/>,
+      icondes: 'Edge Functions',
+      des: `Write custom code without deploying or scaling servers.`
+    },
+  ]
   return (
     <div className="bg-[#1C1C1C]">
-      <Supabase/>
+      <div className="grid grid-cols-4 gap-10" >
+        
+         { productsdata.map((v, k) => (
+          <Products
+            key={v.id}
+            icon={v.icon}
+            icondes={v.icondes}
+            des={v.des}
+          />
+        ))}
+      </div>
+      <Community />
+      <div className="grid grid-cols-5 gap-5 ">
+        { TwitterData.map((v, k) => (
+          <TwitterReview
+            key={v.id}
+            name={v.tname}
+            des={v.tdes}
+          />
+        ))}
+      </div>
+      <Supabase />
       <div className="grid grid-cols-3 gap-6  p-20">
         {data2.map((v, k) => (
           <Review
