@@ -9,7 +9,7 @@ const Box = (props) => {
         <img
           src={props.pic}
           alt=""
-          className="object-contain  w-[400px] h-[280px]   rounded-lg zoom"
+          className="object-contain  md:w-[400px] w-[350px] md:h-[280px] h-[250px]   rounded-lg zoom"
         />
       </div>
       <div className="pt-10">

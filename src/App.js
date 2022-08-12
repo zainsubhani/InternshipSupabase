@@ -148,92 +148,86 @@ Absolutely amazing!`,
   ];
   const productsdata = [
     {
-      id:1,
-      icon:  <FiDatabase size={20}/>,
-      icondes: 'Database',
-      des: `Every project is a full Postgres database, the world's most trusted relational database.`
-    },
-     {
-      id:2,
-      icon:  <FiDatabase size={20}/>,
-      icondes: 'Authentication',
-      des: `Add user sign ups and logins, securing your data with Row Level Security.`
+      id: 1,
+      icon: <FiDatabase size={20} />,
+      icondes: "Database",
+      des: `Every project is a full Postgres database, the world's most trusted relational database.`,
     },
     {
-      id:3,
-      icon:  <FiDatabase size={20}/>,
-      icondes: 'Storage',
-      des: `Store, organize, and serve large files. Any media, including videos and images.`
+      id: 2,
+      icon: <FiDatabase size={20} />,
+      icondes: "Authentication",
+      des: `Add user sign ups and logins, securing your data with Row Level Security.`,
     },
     {
-      id:4,
-      icon:  <FiDatabase size={20}/>,
-      icondes: 'Edge Functions',
-      des: `Write custom code without deploying or scaling servers.`
+      id: 3,
+      icon: <FiDatabase size={20} />,
+      icondes: "Storage",
+      des: `Store, organize, and serve large files. Any media, including videos and images.`,
     },
-  ]
+    {
+      id: 4,
+      icon: <FiDatabase size={20} />,
+      icondes: "Edge Functions",
+      des: `Write custom code without deploying or scaling servers.`,
+    },
+  ];
   return (
     <div>
-      <Header1/>
-      
-    <div className="bg-[#1C1C1C]">
-      <Navbar/>
-      <div className="grid grid-cols-2 p-20 gap-20" >
-        <div>
-          <Weekend/>
-        </div>
-        <div>
-          <BasicVideo/>
-        </div>
+      <Header1 />
 
+      <div className="bg-[#1C1C1C]">
+        <Navbar />
+        <div className="grid grid-cols-2 p-20 gap-20">
+          <div>
+            <Weekend />
+          </div>
+          <div>
+            <BasicVideo />
+          </div>
+        </div>
+        <Focus />
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:p-20 md:p-10 p-6 gap-20">
+          {productsdata.map((v, k) => (
+            <Products
+              key={v.id}
+              icon={v.icon}
+              icondes={v.icondes}
+              des={v.des}
+            />
+          ))}
+        </div>
+        <Community />
+        <div className="grid grid-cols-5 gap-5 ">
+          {TwitterData.map((v, k) => (
+            <TwitterReview key={v.id} name={v.tname} des={v.tdes} />
+          ))}
+        </div>
+        <Supabase />
+        <div className="grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 gap-6  lg:p-20 md:p-14 p-8">
+          {data2.map((v, k) => (
+            <Review
+              key={v.id}
+              showbutton={v.showbutton}
+              icon={v.icon}
+              icondes={v.icondes}
+              title={v.title}
+              subtitle={v.subtitle}
+              subdes={v.subdes}
+              btext={v.btext}
+            />
+          ))}
+        </div>
+        <TableEditor />
+        <Enterprise />
+        <div className="lg:p-20 p-10 grid lg:grid-cols-3 grid-cols-1 gap-10">
+          {data.map((v, k) => (
+            <Box key={v.id} pic={v.pic} des={v.des} subdes={v.subdes} />
+          ))}
+        </div>
+        <Build />
+        <Footer />
       </div>
-    <Focus/>
-      <div className="grid grid-cols-4 gap-10" >
-        
-         { productsdata.map((v, k) => (
-          <Products
-            key={v.id}
-            icon={v.icon}
-            icondes={v.icondes}
-            des={v.des}
-          />
-        ))}
-      </div>
-      <Community />
-      <div className="grid grid-cols-5 gap-5 ">
-        { TwitterData.map((v, k) => (
-          <TwitterReview
-            key={v.id}
-            name={v.tname}
-            des={v.tdes}
-          />
-        ))}
-      </div>
-      <Supabase />
-      <div className="grid grid-cols-3 gap-6  p-20">
-        {data2.map((v, k) => (
-          <Review
-            key={v.id}
-            showbutton={v.showbutton}
-            icon={v.icon}
-            icondes={v.icondes}
-            title={v.title}
-            subtitle={v.subtitle}
-            subdes={v.subdes}
-            btext={v.btext}
-          />
-        ))}
-      </div>
-      <TableEditor />
-      <Enterprise />
-      <div className="p-20 grid grid-cols-3 gap-10">
-        {data.map((v, k) => (
-          <Box key={v.id} pic={v.pic} des={v.des} subdes={v.subdes} />
-        ))}
-      </div>
-      <Build />
-      <Footer />
-    </div>
     </div>
   );
 };

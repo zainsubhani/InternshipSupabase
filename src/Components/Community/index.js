@@ -3,7 +3,7 @@ import { BiMessageRounded } from "react-icons/bi";
 
 const Community = () => {
   return (
-    <div className='w-min-screen h-[40vh] text-[white] border-t-2 border-gray-500 ' >
+    <div className='w-min-screen h-[40vh] text-[white] border-t-[0.3px] border-gray-800 ' >
         <div className='flex items-center justify-center h-full flex-col' >
             <div>
                 <p className='text-3xl text-center font-semibold' >Join the community</p>
