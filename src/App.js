@@ -175,8 +175,9 @@ Absolutely amazing!`,
   return (
     <div>
       <Header1/>
-      <Navbar/>
+      
     <div className="bg-[#1C1C1C]">
+      <Navbar/>
       <div className="grid grid-cols-2 p-20 gap-20" >
         <div>
           <Weekend/>

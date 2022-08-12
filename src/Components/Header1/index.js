@@ -5,9 +5,9 @@ import {MdKeyboardArrowRight  } from "react-icons/md";
 
 const Header1 = () => {
   return (
-    <div>
-        <div className='w-min-screen font-semibold text-[white] p-3 bg-[#41B67E]' >
-            <div className='flex items-center justify-center' >
+    <div className='w-min-screen'>
+        <div className='flex  font-semibold text-[white] p-3 bg-[#41B67E]' >
+            <div className=' w-[100%]  flex items-center justify-center' >
                 <div className='pr-2' >
                     Launch Week 5
                 </div >
@@ -18,8 +18,17 @@ const Header1 = () => {
                 </div>
                 </div>
             </div>
+            <div className='flex justify-end w-[10%]' >
+                <div>
+           <p className='text-[gray]' >x </p> 
+            </div>
+            <div>
+                
+            </div>
+        </div>
             
         </div>
+        
     </div>
   )
 }

@@ -1,49 +1,66 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import Logo from '../../assets/images/Logo.png'
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-
-import { FiDatabase } from "react-icons/fi";
+import {
+  BookmarkAltIcon,
+  BriefcaseIcon,
+  ChartBarIcon,
+  CheckCircleIcon,
+  CursorClickIcon,
+  DesktopComputerIcon,
+  GlobeAltIcon,
+  InformationCircleIcon,
+  MenuIcon,
+  NewspaperIcon,
+  OfficeBuildingIcon,
+  PhoneIcon,
+  PlayIcon,
+  ShieldCheckIcon,
+  UserGroupIcon,
+  ViewGridIcon,
+  XIcon,
+} from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import LOGO from '../../assets/images/Logo.png'
 
 const solutions = [
   {
     name: 'Analytics',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '#',
-    icon: 'icon',
+    icon: ChartBarIcon,
   },
   {
     name: 'Engagement',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
-    icon: 'icons',
+    icon: CursorClickIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: 'icon' },
+  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
   {
     name: 'Integrations',
     description: "Connect with third-party tools that you're already using.",
     href: '#',
-    icon: 'icon',
+    icon: ViewGridIcon,
   },
 ]
 const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: 'icons' },
-  { name: 'View All Products', href: '#', icon: 'icon' },
-  { name: 'Contact Sales', href: '#', icon: 'icon' },
+  { name: 'Watch Demo', href: '#', icon: PlayIcon },
+  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
+  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ]
 const company = [
-  { name: 'About', href: '#', icon: 'icon' },
-  { name: 'Customers', href: '#', icon: 'icon' },
-  { name: 'Press', href: '#', icon: 'icon' },
-  { name: 'Careers', href: '#', icon: 'icon' },
-  { name: 'Privacy', href: '#', icon: 'icon' },
+  { name: 'About', href: '#', icon: InformationCircleIcon },
+  { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
+  { name: 'Press', href: '#', icon: NewspaperIcon },
+  { name: 'Careers', href: '#', icon: BriefcaseIcon },
+  { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
 ]
 const resources = [
-  { name: 'Community', href: '#', icon: 'icon' },
-  { name: 'Partners', href: '#', icon: 'icon' },
-  { name: 'Guides', href: '#', icon: 'icon' },
-  { name: 'Webinars', href: '#', icon: 'icon' },
+  { name: 'Community', href: '#', icon: UserGroupIcon },
+  { name: 'Partners', href: '#', icon: GlobeAltIcon },
+  { name: 'Guides', href: '#', icon: BookmarkAltIcon },
+  { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
 ]
 const blogPosts = [
   {
@@ -68,18 +85,17 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar() {
+export default function Example() {
   return (
-    <Popover className="relative bg-[#1C1C1C] text-[white]">
-      <div className="absolute inset-0  shadow z-30 pointer-events-none" aria-hidden="true" />
+    <Popover className="relative ">
+      <div className="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true" />
       <div className="relative z-20">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <a href="#" className="flex">
-              <span className="sr-only">Workflow</span>
               <img
-                className="h-8 w-auto sm:h-10"
-                src={Logo}
+                className="h-4 w-[140px] sm:h-10"
+                src={LOGO}
                 alt=""
               />
             </a>
@@ -87,7 +103,7 @@ export default function Navbar() {
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
-             /* <FiDatabase className="h-6 w-6" aria-hidden="true" />*/
+              <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
           <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
@@ -102,7 +118,7 @@ export default function Navbar() {
                       )}
                     >
                       <span>Solutions</span>
-                      <MdOutlineKeyboardArrowDown
+                      <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
                           'ml-2 h-5 w-5 group-hover:text-gray-500'
@@ -183,7 +199,7 @@ export default function Navbar() {
                       )}
                     >
                       <span>More</span>
-                      <MdOutlineKeyboardArrowDown
+                      <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
                           'ml-2 h-5 w-5 group-hover:text-gray-500'
@@ -315,7 +331,7 @@ export default function Navbar() {
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Close menu</span>
-                    <FiDatabase className="h-6 w-6" aria-hidden="true" />
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
               </div>
