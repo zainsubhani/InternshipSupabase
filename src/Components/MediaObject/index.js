@@ -11,15 +11,20 @@ export default function MediaObject() {
           viewBox="0 0 200 200"
           aria-hidden="true"
         >
-          <path vectorEffect="non-scaling-stroke" strokeWidth={1} d="M0 0l200 200M0 200L200 0" />
+          <path
+            vectorEffect="non-scaling-stroke"
+            strokeWidth={1}
+            d="M0 0l200 200M0 200L200 0"
+          />
         </svg>
       </div>
       <div>
         <h4 className="text-base font-bold ">Lorem ipsum</h4>
         <p className="mt-1 text-sm">
-          Repudiandae sint consequuntur vel. Amet ut  numquam expedita voluptatem. 
+          Repudiandae sint consequuntur vel. Amet ut numquam expedita
+          voluptatem.
         </p>
       </div>
     </div>
-  )
+  );
 }

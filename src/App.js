@@ -16,6 +16,10 @@ import Weekend from "./Components/Weekend";
 import BasicVideo from "./Components/BasicVideo";
 import Header1 from "./Components/Header1";
 import Navbar from "./Components/Navbar";
+import LOGOS from "./Components/Logos";
+import InstantApi from "./Components/InstantApi";
+import Programe from "./Programme";
+import Program2 from "./Components/Program2";
 const App = () => {
   const data = [
     {
@@ -186,6 +190,7 @@ Absolutely amazing!`,
             <BasicVideo />
           </div>
         </div>
+        <LOGOS />
         <Focus />
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:p-20 md:p-10 p-6 gap-20">
           {productsdata.map((v, k) => (
@@ -197,12 +202,14 @@ Absolutely amazing!`,
             />
           ))}
         </div>
+
         <Community />
         <div className="grid grid-cols-5 gap-5 ">
           {TwitterData.map((v, k) => (
             <TwitterReview key={v.id} name={v.tname} des={v.tdes} />
           ))}
         </div>
+
         <Supabase />
         <div className="grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 gap-6  lg:p-20 md:p-14 p-8">
           {data2.map((v, k) => (
@@ -218,7 +225,23 @@ Absolutely amazing!`,
             />
           ))}
         </div>
-        <TableEditor />
+        <div className="grid grid-cols-2 gap-20">
+          <div>
+            <InstantApi />
+          </div>
+          <div>
+            <Program2 />
+          </div>
+        </div>
+        <div className="grid grid-cols-2">
+          <div>
+            <TableEditor />
+          </div>
+          <div>
+            <Programe />
+          </div>
+        </div>
+
         <Enterprise />
         <div className="lg:p-20 p-10 grid lg:grid-cols-3 grid-cols-1 gap-10">
           {data.map((v, k) => (

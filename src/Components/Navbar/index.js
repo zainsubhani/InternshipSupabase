@@ -1,7 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { FiDatabase } from "react-icons/fi";
-
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -27,6 +26,7 @@ import LOGO from "../../assets/images/Logo.png";
 import Products from "../Products";
 import Latest from "../SubOption";
 import MediaObject from "../MediaObject";
+import { AiOutlineStar } from "react-icons/ai";
 
 const solutions = [
   {
@@ -97,18 +97,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Navbar() {
   return (
-    <Popover className="relative ">
+    <Popover className="relative">
       <div
         className="absolute inset-0 shadow z-30 pointer-events-none"
         aria-hidden="true"
       />
       <div className="relative z-20">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
+        <div className="w-[1349px] h-[65px] mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <a href="#" className="flex">
-              <img className="h-4 w-[140px] sm:h-10" src={LOGO} alt="" />
+              <img className="h-[124px] w-[124px] sm:h-10" src={LOGO} alt="" />
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -125,10 +125,12 @@ export default function Example() {
                     <Popover.Button
                       className={classNames(
                         open ? "text-gray-900" : "text-gray-500",
-                        "group  rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        "group   inline-flex items-center  font-bold "
                       )}
                     >
-                      <span>Solutions</span>
+                      <span className="text-sm font-medium font-customNeue text-[#ffffff]  hover:text-[#3fcf8e] ">
+                        Product{" "}
+                      </span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-600" : "text-gray-400",
@@ -148,34 +150,33 @@ export default function Example() {
                       leaveTo="opacity-0 -translate-y-1"
                     >
                       <Popover.Panel className=" hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-[#1C1C1C] ">
-                       <div className="grid grid-cols-2">
-                        <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-12 xl:py-16">
-                          {solutions.map((v) => (
-                            <a
-                              key={v.id}
-                              className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
-                            >
-                              <Products
+                        <div className="grid grid-cols-2">
+                          <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-12 xl:py-16">
+                            {solutions.map((v) => (
+                              <a
                                 key={v.id}
-                                icon={v.icon}
-                                icondes={v.icondes}
-                                des={v.des}
-                                notShow={true}
-                              />
-                            </a>
-                          ))}
+                                className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
+                              >
+                                <Products
+                                  key={v.id}
+                                  icon={v.icon}
+                                  icondes={v.icondes}
+                                  des={v.des}
+                                  notShow={true}
+                                />
+                              </a>
+                            ))}
+                          </div>
+                          <div>
+                            <Latest />
+                          </div>
                         </div>
-                        <div>
-                          <Latest/>
-                        </div>
-                        </div>
-                   
                       </Popover.Panel>
                     </Transition>
                   </>
                 )}
               </Popover>
-                 <Popover>
+              <Popover>
                 {({ open }) => (
                   <>
                     <Popover.Button
@@ -184,7 +185,9 @@ export default function Example() {
                         "group  rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       )}
                     >
-                      <span>More</span>
+                      <span className="text-sm font-medium font-customNeue text-[#ffffff]  hover:text-[#3fcf8e]">
+                        Developers
+                      </span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? "text-gray-600" : "text-gray-400",
@@ -204,16 +207,16 @@ export default function Example() {
                       leaveTo="opacity-0 -translate-y-1"
                     >
                       <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
-                 <div className="grid grid-cols-2 bg-[pink]">
-                        <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-12 xl:py-16">
-                          <MediaObject/>
-                          <MediaObject/>
-                          <MediaObject/>
-                          <MediaObject/>
-                        </div>
-                        <div>
-                          <Latest/>
-                        </div>
+                        <div className="grid grid-cols-2 bg-[pink]">
+                          <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-12 xl:py-16">
+                            <MediaObject />
+                            <MediaObject />
+                            <MediaObject />
+                            <MediaObject />
+                          </div>
+                          <div>
+                            <Latest />
+                          </div>
                         </div>
                       </Popover.Panel>
                     </Transition>
@@ -222,30 +225,37 @@ export default function Example() {
               </Popover>
               <a
                 href="#"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
+                className="text-sm font-medium font-customNeue text-[#ffffff]  hover:text-[#3fcf8e] hover:border-b-2 hover:border-[#3fcf8e]  "
               >
                 Pricing
               </a>
               <a
                 href="#"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
+                className="text-sm font-medium font-customNeue text-[#ffffff]  hover:text-[#3fcf8e] hover:border-b-2 hover:border-[#3fcf8e]  "
               >
                 Docs
               </a>
-           
             </Popover.Group>
             <div className="flex items-center md:ml-12">
+              <div className="flex items-center pr-2 hover:bg-gray-700 mr-1 hover:rounded-md p-1">
+                <div className="text-[white] ">
+                  <AiOutlineStar className="hover:text-[yellow]" />
+                </div>
+                <div className="text-xs text-[white] ml-1">
+                  Star us on GitHub
+                </div>
+              </div>
               <a
                 href="#"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
+                className="text-xs border-2 rounded-md border-[gray] p-1 font-medium text-[white] hover:text-gray-900"
               >
                 Sign in
               </a>
               <a
                 href="#"
-                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+                className="mr-8 ml-3 inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Sign up
+                Start your Project
               </a>
             </div>
           </div>
