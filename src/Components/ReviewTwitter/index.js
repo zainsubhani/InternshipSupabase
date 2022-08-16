@@ -23,9 +23,7 @@ const TwitterReview = (props) => {
           <div className="pl-2 text-[white] font-semibold">{props.name}</div>
         </div>
         <div className="pt-2">
-          <p className="text-[#A0A0A0] text-xl">
-            {props.des}
-          </p>
+          <p className="text-[#A0A0A0] text-base ">{props.des}</p>
         </div>
       </div>
     </div>

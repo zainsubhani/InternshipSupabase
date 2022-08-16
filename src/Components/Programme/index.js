@@ -27,7 +27,7 @@ export function Programe() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
-    <div className="p-20">
+    <div className="lg:p-20 md:p-10 p-5">
       <div className="flex space-x-3 border-b ">
         {/* Loop through tab data and render button for each. */}
         {tabsData.map((tab, idx) => {

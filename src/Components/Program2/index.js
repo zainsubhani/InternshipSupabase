@@ -1,71 +1,444 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { AiOutlineCopy } from "react-icons/ai";
 
-export function Program2() {
-  const tabsData = [
+const Program2 = () => {
+  const [active, setActive] = useState(0);
+  let a = [
     {
-      label: "Create user",
-      heading: "Manage your data with the familiarity of a spreadsheet",
-      content:
-        "You dont have to be a database expert to use Supabase. Our table editor makes Postgres easy to use, even for non-techies. You can do everything right in our dashboard.",
-      btn: "Explore Table View >",
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Create_a_user",
     },
     {
-      label: "Realtime subscription",
-      heading: "In-built SQL editor for when you need greater control",
-      content:
-        "Write, save, and execute SQL queries directly on our dashboard, with templates to save you time. Run common queries and even build applications using our growing list of templates",
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Realtime_subscriptions",
     },
     {
-      label: "Read a record",
-      heading: "User management as straight-forward as it can be",
-      content:
-        "Easily manage your users with Supabase Auth, with email logins, magic links, and third-party logins. Create complex access policies with SQL rules to fit your unique business needs.",
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Read_a_record",
     },
     {
-      label: "Create a record",
-      heading: "User management as straight-forward as it can be",
-      content:
-        "Easily manage your users with Supabase Auth, with email logins, magic links, and third-party logins. Create complex access policies with SQL rules to fit your unique business needs.",
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Create_a_record",
+    },
+    {
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Update_a_record",
+    },
+    {
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Update_a_record",
+    },
+    {
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Update_a_record",
+    },
+    {
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Update_a_record",
+    },
+    {
+      content: (
+        <div className="bg-[#181818] h-[60vh] mt-5 rounded-md">
+          <div className="p-5 text-white">
+            <div className="flex justify-end">
+              <div>
+                <AiOutlineCopy color="gray" />
+              </div>
+            </div>
+
+            <code>
+              <span className="text-[#569CD6]">import </span> &#123;
+              createClient &#125; <span className="text-[#569CD6]"> from </span>{" "}
+              <span className="text-[#35A573]"> @supabase/supabase-js </span>
+            </code>
+            <p className="text-[#75715E]">// Initialize </p>
+            <code>
+              {" "}
+              <span className="text-[#569CD6]"> const </span> supabaseUrl =
+              <span className="text-[#35A573]">
+                {" "}
+                'https://chat-room.supabase.co'{" "}
+              </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabaseKey =
+              <span className="text-[#35A573]"> 'public-anon-key' </span>
+            </code>
+            <code>
+              <span className="text-[#569CD6]"> const </span> supabase =
+              createClient(supabaseUrl, supabaseKey)
+            </code>
+            <p className="mt-5 text-[#75715E] ">// Create a new user</p>
+            <code>
+              <span className="text-[#569CD6]"> const </span> &#123;(user,
+              error) &#125; = <span className="text-[#569CD6]"> const </span>{" "}
+              supabase.auth.signUp(&#123;
+            </code>
+            <p> email: 'example@email.com',</p>
+            <p> password: 'example-password',</p>
+            <code> &#125;)</code>
+          </div>
+        </div>
+      ),
+      name: "Update_a_record",
     },
   ];
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
-
   return (
-    <div className="p-20">
-      <div className="flex space-x-3 border-b ">
-        {/* Loop through tab data and render button for each. */}
-        {tabsData.map((tab, idx) => {
-          return (
-            <button
-              key={idx}
-              className={` border-1 border-[white]  text-gray-500 border-b-2 w-auto transition-colors duration-100 ${
-                idx === activeTabIndex
-                  ? "border-[white]"
-                  : "border-transparent hover:border-gray-200"
-              }`}
-              // Change the active tab on click.
-              onClick={() => setActiveTabIndex(idx)}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-      {/* Show active tab content. */}
-      <div className="py-4">
-        <p className="text-white text-xl ">
-          {tabsData[activeTabIndex].heading}
-        </p>
-        <p className="pt-5 text-gray-400 ">
-          {tabsData[activeTabIndex].content}
-        </p>
-      </div>
+    <div className="lg:p-20 md:p-10 p-5">
       <div>
-        <button className="text-gray-400 text-sm">
-          {tabsData[activeTabIndex].btn}
-        </button>
+        <div class="flex flex-nowrap"></div>
+        <ul className="flex  flex flex-nowrap overflow-x-scroll	 text-gray-500">
+          {a.map((v, k) => (
+            <div
+              onClick={() => setActive(k)}
+              className={`w-[100%]  border border-gray-500 p-1 text-xs rounded mr-1 hover:text-[white] active:bg-[white] ${
+                active === k && "bg-white text-black"
+              }`}
+            >
+              {v.name}
+            </div>
+          ))}
+        </ul>
       </div>
+      {a[active].content}
     </div>
   );
-}
+};
+
 export default Program2;

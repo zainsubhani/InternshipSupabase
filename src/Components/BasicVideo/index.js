@@ -4,7 +4,7 @@ const BasicVideo = () => {
   return (
     <div>
       <iframe
-        width="560"
+        width="98%"
         height="315"
         src="https://www.youtube.com/embed/dBOSUER_5T4"
         title="YouTube video player"

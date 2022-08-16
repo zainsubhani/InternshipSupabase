@@ -2,7 +2,7 @@ import React from "react";
 
 const InstantApi = () => {
   return (
-    <div className="p-20 ">
+    <div className="lg:p-20 md:p-10 p-5 ">
       <div>
         <p className="text-white text-2xl font-semibold">
           Instant APIs that do the hard work for you
@@ -12,8 +12,8 @@ const InstantApi = () => {
           repetitive CRUD endpoints and focus on your product.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-10 pt-20 text-gray-400">
-        <div className="pb-10">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10 lg:pt-20 md:pt-10 pt-5 text-gray-400">
+        <div className="md:pb-10 pb-3">
           <p className="text-[white] font-semibold">TypeScript Support</p>
           <p className="pt-3 font-semibold text-gray-400">
             Type definitions built directly from your database schema

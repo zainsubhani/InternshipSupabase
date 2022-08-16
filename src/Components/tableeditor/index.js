@@ -2,10 +2,10 @@ import React from "react";
 
 const TableEditor = () => {
   return (
-    <div className="p-20 grid grid-cols-12 gap-10" >
-      <div className="col-span-7" >
+    <div className="lg:p-20 md:p-10 p-5 grid grid-cols-12">
+      <div className="col-span-12">
         <iframe
-          width="560"
+          width="100%"
           height="315"
           src="https://www.youtube.com/embed/xIHjwJgxOmk"
           title="YouTube video player"
@@ -14,10 +14,7 @@ const TableEditor = () => {
           allowfullscreen
         ></iframe>
       </div>
-      <div>
-
-        
-      </div>
+      <div></div>
     </div>
   );
 };

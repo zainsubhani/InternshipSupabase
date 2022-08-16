@@ -5,13 +5,13 @@ const Weekend = () => {
   return (
     <div>
       <div>
-        <p className="text-5xl font-semibold text-[white]">
+        <p className="lg:text-5xl font-semibold text-[white]  ">
           Build in a weekend.
         </p>
-        <p className="text-[#3FCF8E] text-5xl font-semibold">
+        <p className="text-[#3FCF8E] lg:text-5xl font-semibold sm:text-10xl">
           Scale to millions.
         </p>
-        <p className="pt-5 text-[gray] text-xl font-semibold">
+        <p className="pt-5 text-[gray] lg:text-xl font-semibold sm:text-sm">
           Supabase is an open source Firebase alternative. Start your project
           with a Postgres Database, Authentication, instant APIs, Realtime
           subscriptions and Storage.

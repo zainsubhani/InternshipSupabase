@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Focus = () => {
   return (
     <div>
-        <div className='text-2xl font-semibold p-20 text-[gray]' >
-            <p>Build faster and focus on your products</p>
-        </div>
+      <div className="lg:text-2xl md:text-xl text-xl font-semibold lg:p-20 md:p-10 p-7  text-[white] ">
+        <p>Build faster and focus on your products</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Focus
+export default Focus;

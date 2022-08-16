@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { FiDatabase } from "react-icons/fi";
+import { BsBook } from "react-icons/bs";
 import { Popover, Transition } from "@headlessui/react";
 import {
   BookmarkAltIcon,
@@ -92,6 +93,32 @@ const blogPosts = [
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80",
   },
 ];
+const data = [
+  {
+    id: 1,
+    icon: <BsBook />,
+    heading: "Documentation",
+    des: "Everything you need that makes it simple to get started.",
+  },
+  {
+    id: 2,
+    icon: <BsBook />,
+    heading: "API reference",
+    des: "Examples and references for using API libaries ",
+  },
+  {
+    id: 3,
+    icon: <BsBook />,
+    heading: "Guides",
+    des: "Examples and references for using Supabase ",
+  },
+  {
+    id: 4,
+    icon: <BsBook />,
+    heading: "Careers",
+    des: "Join the Supabase team and get involed  ",
+  },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -99,7 +126,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Popover className="relative">
+    <Popover className="relative ">
       <div
         className="absolute inset-0 shadow z-30 pointer-events-none"
         aria-hidden="true"
@@ -108,7 +135,7 @@ export default function Navbar() {
         <div className="w-[1349px] h-[65px] mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
             <a href="#" className="flex">
-              <img className="h-[124px] w-[124px] sm:h-10" src={LOGO} alt="" />
+              <img className="lg:h-[50px] w-[124px] " src={LOGO} alt="" />
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -207,12 +234,16 @@ export default function Navbar() {
                       leaveTo="opacity-0 -translate-y-1"
                     >
                       <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
-                        <div className="grid grid-cols-2 bg-[pink]">
+                        <div className="grid grid-cols-2 bg-[#1C1C1C]">
                           <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-2 lg:px-8 lg:py-12 xl:py-16">
-                            <MediaObject />
-                            <MediaObject />
-                            <MediaObject />
-                            <MediaObject />
+                            {data.map((v, k) => (
+                              <MediaObject
+                                key={v.id}
+                                icon={v.icon}
+                                heading={v.heading}
+                                des={v.des}
+                              />
+                            ))}
                           </div>
                           <div>
                             <Latest />

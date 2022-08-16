@@ -1,4 +1,8 @@
-import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import React, { useRef } from "react";
+import Slider from "react-slick";
 import Box from "./Components/Box";
 import Build from "./Components/Build";
 import Footer from "./Components/Footer";
@@ -18,9 +22,10 @@ import Header1 from "./Components/Header1";
 import Navbar from "./Components/Navbar";
 import LOGOS from "./Components/Logos";
 import InstantApi from "./Components/InstantApi";
-import Programe from "./Programme";
+import Programe from "./Components/Programme/index";
 import Program2 from "./Components/Program2";
 const App = () => {
+  let ref = useRef(null);
   const data = [
     {
       id: "1",
@@ -149,6 +154,53 @@ Barely an hour into a proof-of-concept and already have most of the functionalit
 
 Absolutely amazing!`,
     },
+    {
+      id: 1,
+      tname: "@thatguy_tex",
+      tdes: `            "Working with @supabase has been one of the best dev experiences
+            I've had lately. Incredibly easy to set up, great documentation, and
+            so many fewer hoops to jump through than the competition. I
+            definitely plan to use it on any and all future projects."`,
+    },
+    {
+      id: 2,
+      tname: "@lxoyeDesign",
+      tdes: `            @supabase
+ is just 🤯
+Now I see why a lot of people love using it as a backend for their applications. I am really impressed with how easy it is to set up an Auth and then just code it together for the frontend.
+
+@IngoKpp
+ now I see your joy with Supabase
+
+#coding #fullstackwebdev`,
+    },
+    {
+      id: 3,
+      tname: "@varlenneto",
+      tdes: `          I've been using 
+@supabase
+ for two personal projects and it has been amazing being able to use the power of Postgres and don't have to worry about the backend`,
+    },
+    {
+      id: 4,
+      tname: "@justinjunodev",
+      tdes: `            Y'all 
+@supabase
+ + 
+@nextjs
+ is amazing! 🙌
+
+Barely an hour into a proof-of-concept and already have most of the functionality in place. 🤯🤯🤯`,
+    },
+    {
+      id: 5,
+      tname: "@BraydonCoyer",
+      tdes: `            And thanks to 
+@supabase
+, I was able to go from idea to launched feature in a matter of hours. 
+
+Absolutely amazing!`,
+    },
   ];
   const productsdata = [
     {
@@ -176,21 +228,64 @@ Absolutely amazing!`,
       des: `Write custom code without deploying or scaling servers.`,
     },
   ];
+  var settings = {
+    arrows: false,
+
+    infinite: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const next = () => {
+    ref.slickNext();
+  };
+  const previous = () => {
+    ref.slickPrev();
+  };
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header1 />
 
       <div className="bg-[#1C1C1C]">
         <Navbar />
-        <div className="grid grid-cols-2 p-20 gap-20">
+        <div className="grid md:grid-cols-2 grid-cols-1 lg:p-20 md:p-10 sm:p-5 p-5 gap-20 ">
           <div>
             <Weekend />
+
+            <LOGOS />
           </div>
           <div>
             <BasicVideo />
           </div>
         </div>
-        <LOGOS />
+
         <Focus />
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:p-20 md:p-10 p-6 gap-20">
           {productsdata.map((v, k) => (
@@ -204,14 +299,26 @@ Absolutely amazing!`,
         </div>
 
         <Community />
-        <div className="grid grid-cols-5 gap-5 ">
-          {TwitterData.map((v, k) => (
-            <TwitterReview key={v.id} name={v.tname} des={v.tdes} />
-          ))}
+        <div className="md:mx-1 mx-5">
+          <Slider {...settings} ref={(c) => (ref = c)} className="">
+            {TwitterData.map((v, k) => (
+              <div className=" cursor-pointer  pr-3 ">
+                <TwitterReview key={v.id} name={v.tname} des={v.tdes} />
+              </div>
+            ))}
+          </Slider>
+          <div style={{ textAlign: "center" }} className="md:block hidden">
+            <button className="button" onClick={previous}>
+              Previous
+            </button>
+            <button className="button" onClick={next}>
+              Next
+            </button>
+          </div>
         </div>
-
         <Supabase />
-        <div className="grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 gap-6  lg:p-20 md:p-14 p-8">
+
+        <div className="grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 gap-6  lg:p-20 md:p-10 p-5">
           {data2.map((v, k) => (
             <Review
               key={v.id}
@@ -225,7 +332,7 @@ Absolutely amazing!`,
             />
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-10 ">
           <div>
             <InstantApi />
           </div>
@@ -233,7 +340,7 @@ Absolutely amazing!`,
             <Program2 />
           </div>
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2 grid-cols-1 ">
           <div>
             <TableEditor />
           </div>
@@ -243,12 +350,13 @@ Absolutely amazing!`,
         </div>
 
         <Enterprise />
-        <div className="lg:p-20 p-10 grid lg:grid-cols-3 grid-cols-1 gap-10">
+        <div className="lg:p-20 md:p-10 p-5 grid lg:grid-cols-3 grid-cols-1 gap-10">
           {data.map((v, k) => (
             <Box key={v.id} pic={v.pic} des={v.des} subdes={v.subdes} />
           ))}
         </div>
         <Build />
+
         <Footer />
       </div>
     </div>
