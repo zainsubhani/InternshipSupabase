@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 import React, { useRef } from "react";
 import Slider from "react-slick";
@@ -307,12 +308,12 @@ Absolutely amazing!`,
               </div>
             ))}
           </Slider>
-          <div style={{ textAlign: "center" }} className="md:block hidden">
+          <div className="px-5 pt-5 md:flex justify-between  hidden">
             <button className="button" onClick={previous}>
-              Previous
+              <AiOutlineArrowLeft color="gray" />
             </button>
             <button className="button" onClick={next}>
-              Next
+              <AiOutlineArrowRight color="gray" />
             </button>
           </div>
         </div>

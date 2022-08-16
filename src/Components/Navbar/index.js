@@ -207,7 +207,7 @@ export default function Navbar() {
                             {solutions.map((v) => (
                               <a
                                 key={v.id}
-                                className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
+                                className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-[#2E2E2E]"
                               >
                                 <Products
                                   key={v.id}
